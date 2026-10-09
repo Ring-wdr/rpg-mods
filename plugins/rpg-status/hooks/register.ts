@@ -264,7 +264,7 @@ export const register: Register = (on, options) => {
     }
     $.ui.invalidate('ui.render')
     return next(e)
-  })
+  }).catch(($, e, next) => next(e))
 
   on('classic.PostModelSwitch', async ($, e, next) => {
     const from = jobOf(model ?? e.from_model)
@@ -273,14 +273,14 @@ export const register: Register = (on, options) => {
     if (from !== to) $.ui.toast(`${heroName}은(는) ${to}(으)로 전직했다!`, { timeoutMs: 6000 })
     $.ui.invalidate('ui.render')
     return next(e)
-  })
+  }).catch(($, e, next) => next(e))
 
   on('classic.PostCompact', async ($, e, next) => {
     $.ui.toast('여관에서 하룻밤 묵었다. HP가 회복되었다!', { timeoutMs: 6000 })
     absorb(await $.session.usage())
     $.ui.invalidate('ui.render')
     return next(e)
-  })
+  }).catch(($, e, next) => next(e))
 
   on('classic.SubagentStart', async ($, e, next) => {
     if (!party.some((member) => member.id === e.agent_id)) {
@@ -293,14 +293,14 @@ export const register: Register = (on, options) => {
     }
     $.ui.invalidate('ui.render')
     return next(e)
-  })
+  }).catch(($, e, next) => next(e))
 
   on('classic.SubagentStop', async ($, e, next) => {
     party = party.filter((member) => member.id !== e.agent_id)
     stopTimerIfIdle()
     $.ui.invalidate('ui.render')
     return next(e)
-  })
+  }).catch(($, e, next) => next(e))
 
   on('turn.start', async ($, e, next) => {
     isWorking = true

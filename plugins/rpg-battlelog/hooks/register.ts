@@ -154,7 +154,7 @@ export const register: Register = (on, options) => {
   on('classic.SubagentStart', async ($, e, next) => {
     agents.set(e.agent_id, e.agent_type || '동료')
     return next(e)
-  })
+  }).catch(($, e, next) => next(e))
 
   on('turn.start', async ($, e, next) => {
     turnActions = 0
@@ -212,7 +212,7 @@ export const register: Register = (on, options) => {
       keep()
       throw error
     }
-  })
+  }).catch(($, e, next) => next(e))
 
   on('command.run', { command: 'battlelog' }, async ($) => {
     selected = undefined
