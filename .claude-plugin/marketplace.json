@@ -1,0 +1,17 @@
+{
+  "name": "rpg-mods",
+  "description": "Claude Code를 고전 턴제 JRPG로 개조하는 mods. 파티 상태창과 전투 기록",
+  "owner": { "name": "ringwring", "url": "https://github.com/Ring-wdr" },
+  "plugins": [
+    {
+      "name": "rpg-status",
+      "source": "./plugins/rpg-status",
+      "description": "프롬프트 위 파티 상태창: HP=컨텍스트, MP=5시간 한도, G=세션 비용, 누적 레벨, 모델별 직업 도트 캐릭터와 ATB 게이지, 서브에이전트 동료 합류"
+    },
+    {
+      "name": "rpg-battlelog",
+      "source": "./plugins/rpg-battlelog",
+      "description": "도구 호출을 전투 커맨드로 기록하는 메시지 창: /battlelog에서 미스·봉인 직전 행동을 되감기, 비밀값은 가려서 기록"
+    }
+  ]
+}

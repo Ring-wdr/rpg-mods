@@ -1,0 +1,4 @@
+{
+  "description": "rpg-status hooks module",
+  "modules": ["./register.ts"]
+}

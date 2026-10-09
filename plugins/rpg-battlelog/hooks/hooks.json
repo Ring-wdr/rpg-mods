@@ -1,0 +1,4 @@
+{
+  "description": "rpg-battlelog hooks module",
+  "modules": ["./register.ts"]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "rpg-status",
+  "version": "0.1.0",
+  "description": "프롬프트 위 고전 JRPG 파티 상태창: HP=컨텍스트, MP=5시간 한도, G=세션 비용, 세션을 넘어 쌓이는 레벨, 모델별 직업 도트 캐릭터와 ATB 게이지, 서브에이전트 동료 합류",
+  "author": { "name": "ringwring", "url": "https://github.com/Ring-wdr" },
+  "homepage": "https://github.com/Ring-wdr/rpg-mods",
+  "repository": "https://github.com/Ring-wdr/rpg-mods",
+  "license": "MIT",
+  "keywords": ["mods", "rpg", "usage", "context", "korean"],
+  "userConfig": {
+    "hero_name": {
+      "type": "string",
+      "title": "주인공 이름",
+      "description": "상태창 첫 줄에 나오는 주인공 이름",
+      "default": "Claude"
+    },
+    "gold_per_usd": {
+      "type": "number",
+      "title": "1달러당 골드",
+      "description": "세션 비용(API 정가 환산)을 골드로 바꿀 때 쓰는 비율. 기본값 1400은 원화와 같아요",
+      "default": 1400,
+      "min": 1,
+      "max": 100000
+    },
+    "style": {
+      "type": "string",
+      "title": "표시 방식",
+      "description": "window는 터미널에서 파란 상태창, compact는 한 줄",
+      "options": ["window", "compact"],
+      "default": "window"
+    }
+  }
+}

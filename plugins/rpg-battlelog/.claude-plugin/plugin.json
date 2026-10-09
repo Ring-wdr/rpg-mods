@@ -1,0 +1,26 @@
+{
+  "name": "rpg-battlelog",
+  "version": "0.1.0",
+  "description": "도구 호출을 고전 JRPG 전투 커맨드로 기록: 프롬프트 위 메시지 창, /battlelog에서 미스·봉인(오류·거부) 직전 행동을 되감기, 토큰·비밀번호는 가려서 기록",
+  "author": { "name": "ringwring", "url": "https://github.com/Ring-wdr" },
+  "homepage": "https://github.com/Ring-wdr/rpg-mods",
+  "repository": "https://github.com/Ring-wdr/rpg-mods",
+  "license": "MIT",
+  "keywords": ["mods", "rpg", "audit", "tool-calls", "korean"],
+  "userConfig": {
+    "hero_name": {
+      "type": "string",
+      "title": "주인공 이름",
+      "description": "메인 Claude가 행동할 때 메시지에 나오는 이름",
+      "default": "Claude"
+    },
+    "before": {
+      "type": "number",
+      "title": "전멸 직전 행동 수",
+      "description": "전멸 장면 하나를 볼 때 함께 보여줄 직전 행동 수",
+      "default": 5,
+      "min": 1,
+      "max": 20
+    }
+  }
+}
